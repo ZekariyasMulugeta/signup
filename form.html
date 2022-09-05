@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: cyan;
+font-size: 120%;
+color: red;
+}
+
+form{
+    width: 275px;
+margin: 20px auto;
+padding: 20px;
+    background: transparent;
+    border: 4px solid black;
+    border-radius: 18px 18px 18px 18px;
+}
+.input-group{
+    margin: 5px 0px 15px 0px;
+}
+.input-group input{
+    height: 30px;
+width: 90%;
+padding: 5px 3px;
+font-size: 15px;
+border-radius: 5px;
+border: 2px solid green;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.btn{
+padding: 10px;
+background: tomato;
+border-block: none;
+align-items: center;
+cursor: pointer;
+text-shadow: 2px 2px 4px #000000;
+font-size: 20px;
+
+}
+img{
+    height: 200px;
+    text-align: left;
+}
+.profile-pic-div{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 20%;
+    left: 90%;
+    transform: translate(-50%,-50%);
+    border: 1px solid green;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#photo{
+    height: 100%;
+    width: 100%;
+    text-align: left;
+}
+#file{
+display: none;
+}
+#uploadbtn{
+    height: 40px;
+    width: 100%;
+    position: inherit;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50);
+    text-align: right;
+    background: red;
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+</style>
+<script>
+const imgdiv= document.querySelector('-profile-pic-div');
+const img =Document.querySelector('#photo');
+const file= document.querySelector('#file');
+const uploadbtn =Document.querySelector('#uploadbtn');
+imgdiv.addEventListener('mouseenter', function(){
+    uploadbtn.style.display="block";
+});
+
+    imgdiv.addEventListener('mouseleaver', function(){
+        uploadbtn.style.display="none";
+    });
+file.addEventListener('change' , function(){
+    const choosedfile= this.file[0];
+    if (choosedfile) {
+        const reader = new FileReader();
+        reader.addEventListener('load',function() {
+            img.setattribute('src',reader.result);});
+            reader.readAsDataURL(choosedfile);
+
+            
+        }
+        
+</script>
+</head>
+<body>
+
+    <div class="profile-pic-div">
+        <img src="nahom.jpg" alt="zaza" id="photo">
+        <input type="file" name="file" id="file">
+        <label for="file" id="uploadbtn"></label>
+    </div>
+                   
+    <h1> EMPLOYMENT FORM</h1>
+    <P>This is the eEmployment FORM</P>
+   
+   <form action="admin.html">
+    <div class="input-group">
+        <input type="text" name="First Name" id=""placeholder="Enter your name">
+        <input type="text"name""Last Name" placeholder="Enter your last name">
+    </div>
+    <tr>
+        <td>sex</td>
+        <input type="radio" name="Gender"value"Male" checked>Male
+        <input type="radio" name="Gender" id=""value"female">Female
+    </tr>
+    <div class="input-group">
+        <input type="email" name="email" id=""placeholder="Enter your email" >
+
+    </div>
+    <div class="input-group">
+        <input type="phone" name="phone number" id=""placeholder="Enter your phone no">
+        
+    </div>
+    <p><label for="Date of Birth">
+    <div class="input-group">
+        <input type="date" >(yyyy-mm-dd)
+    </label></p> 
+    </div>
+    
+    <div class="input-group">
+        <input type="password" name="password" id=""placeholder="Enter your password">
+        
+    </div>
+    <div class="input-group">
+        <input type="password" name="confirm-password" id=""placeholder="Enter your confirm password" >
+        
+    </div>
+    <div class="input-group"></div>
+    <select name="Address" >
+      <datalist id="adress">
+        <option value="Addis Ababa">Addis Abeba</option>
+        <option value="jima">Jima</option>
+        <option value="dilla">Dilla</option>
+        <option value="Tigray">Tigray</option>
+        <option value="Oomia">Oromia</option>
+        <option value="Afar">Afar</option>
+        <option value="wEeldia">Weldia</option>
+        <option value="Dira Dawa">Dira Dawa</option>
+        <option value="Benishangui gumz">Benishangui Gumz</option>
+    </select>
+        </datalist>
+    <div class="input-group">
+        <button type="submit" class="btn" name="submit" id=""value"submit">signup</button> 
+        
+        <button type="reset" class="btn" name="reset" id=""value"clear">clear</button> 
+        
+    </div>
+     
+   </form> 
+</body>
+</html> 
